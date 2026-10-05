@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FrissPont Klíma portfólió-koncepció: modern klímatelepítés, karbantartás és tisztítás.">
+  <title>FrissPont Klíma — Hűvös otthon, tiszta megoldás</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+:root {
+  --navy: #08233d;
+  --navy-2: #0c3154;
+  --blue: #147bf3;
+  --cyan: #5cd7f5;
+  --ice: #edf8ff;
+  --ink: #10273b;
+  --muted: #607488;
+  --line: #dce8f0;
+  --white: #ffffff;
+  --shadow: 0 22px 60px rgba(12, 49, 84, .12);
+  --radius: 24px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Manrope", system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.65; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+svg { display: block; }
+.container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+.concept-bar { background: var(--navy); color: #bdeeff; text-align: center; font-size: 12px; letter-spacing: .08em; padding: 7px 16px; }
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.9); border-bottom: 1px solid rgba(220,232,240,.75); backdrop-filter: blur(16px); }
+.nav-wrap { height: 78px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.04em; }
+.logo-mark { display: grid; place-items: center; width: 36px; height: 36px; color: white; border-radius: 11px; background: linear-gradient(135deg, var(--blue), var(--cyan)); box-shadow: 0 8px 20px rgba(20,123,243,.28); }
+.logo-mark svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.logo-accent { color: var(--blue); }
+.nav { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 650; }
+.nav > a:not(.nav-cta) { color: #39536a; transition: color .2s; }
+.nav > a:not(.nav-cta):hover { color: var(--blue); }
+.nav-cta { padding: 12px 19px; border-radius: 11px; color: white; background: var(--navy); transition: transform .2s, background .2s; }
+.nav-cta:hover { transform: translateY(-2px); background: var(--blue); }
+.menu-toggle { display: none; background: transparent; border: 0; padding: 8px; }
+.menu-toggle span { display: block; width: 24px; height: 2px; margin: 5px; background: var(--navy); transition: .2s; }
+.hero { position: relative; overflow: hidden; background: linear-gradient(155deg, #f8fcff 0%, #eef9ff 55%, #fff 100%); padding: 90px 0 0; }
+.hero::before { content: ""; position: absolute; inset: 0; opacity: .45; background-image: radial-gradient(#94c4e5 1px, transparent 1px); background-size: 28px 28px; mask-image: linear-gradient(to right, #000, transparent 65%); }
+.hero-glow { position: absolute; border-radius: 50%; filter: blur(1px); }
+.glow-one { width: 520px; height: 520px; right: -180px; top: -190px; background: rgba(92,215,245,.18); }
+.glow-two { width: 350px; height: 350px; left: 38%; bottom: -240px; background: rgba(20,123,243,.09); }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 70px; min-height: 535px; }
+.eyebrow, .section-kicker { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 17px; }
+.eyebrow span { width: 22px; height: 2px; background: var(--blue); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 22px; color: var(--navy); font-size: clamp(48px, 6vw, 76px); line-height: 1.02; letter-spacing: -.065em; }
+h1 em { font-style: normal; color: var(--blue); }
+.hero-lead { max-width: 590px; color: var(--muted); font-size: 17px; }
+.hero-actions { display: flex; align-items: center; gap: 13px; margin: 31px 0; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 22px; border: 0; border-radius: 13px; font-weight: 750; font-size: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: white; background: linear-gradient(135deg, var(--blue), #0968d8); box-shadow: 0 13px 26px rgba(20,123,243,.25); }
+.button-primary:hover { box-shadow: 0 17px 34px rgba(20,123,243,.34); }
+.button-ghost { color: var(--navy); background: white; border: 1px solid var(--line); }
+.button-ghost svg { width: 17px; fill: none; stroke: var(--blue); stroke-width: 1.8; }
+.hero-trust { display: flex; align-items: center; gap: 24px; color: var(--navy); }
+.hero-trust > div { display: grid; grid-template-columns: auto auto; align-items: center; gap: 2px 8px; }
+.hero-trust strong { font-size: 14px; }
+.hero-trust small { grid-column: 1 / -1; color: var(--muted); font-size: 11px; }
+.stars { color: #f5a524; font-size: 11px; letter-spacing: 1px; }
+.trust-divider { display: block !important; width: 1px; height: 33px; background: var(--line); }
+.hero-visual { position: relative; height: 465px; }
+.visual-card { position: absolute; inset: 15px 0 15px 30px; border-radius: 45% 45% 28px 28px; background: linear-gradient(150deg, #d7f2ff, #93d7f4 55%, #63bdea); box-shadow: var(--shadow); overflow: hidden; }
+.visual-card::before { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; right: -85px; top: -70px; box-shadow: 0 0 0 45px rgba(255,255,255,.08), 0 0 0 90px rgba(255,255,255,.06); }
+.visual-card::after { content: ""; position: absolute; inset: auto 0 0; height: 38%; background: linear-gradient(transparent, rgba(8,35,61,.15)); }
+.ac-unit { position: absolute; z-index: 2; width: 74%; height: 135px; top: 108px; left: 13%; padding: 25px 30px; border-radius: 18px 18px 28px 28px; background: linear-gradient(160deg, #fff, #eaf2f6); box-shadow: 0 28px 45px rgba(8,35,61,.24); transform: perspective(800px) rotateY(-5deg); }
+.ac-brand { color: #8799a7; font-size: 8px; font-weight: 800; letter-spacing: .18em; }
+.ac-display { position: absolute; right: 28px; top: 22px; color: var(--blue); font-size: 11px; }.ac-display span { font-size: 20px; font-weight: 700; }
+.ac-line { position: absolute; left: 24px; right: 24px; bottom: 31px; height: 3px; border-radius: 2px; background: #b9cbd5; box-shadow: 0 8px 12px rgba(26,58,80,.12); }
+.air { position: absolute; top: 132px; width: 1px; height: 78px; background: linear-gradient(rgba(255,255,255,.8), transparent); transform: rotate(8deg); }
+.air-one { left: 24%; }.air-two { left: 50%; height: 100px; }.air-three { right: 22%; }
+.temperature-card, .service-badge { position: absolute; z-index: 4; display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1px solid rgba(255,255,255,.75); border-radius: 15px; background: rgba(255,255,255,.88); box-shadow: 0 16px 32px rgba(8,35,61,.15); backdrop-filter: blur(8px); }
+.temperature-card { top: 38px; right: 26px; }.service-badge { bottom: 34px; left: 24px; }
+.temp-icon, .service-badge > span { display: grid; place-items: center; width: 34px; height: 34px; color: white; border-radius: 10px; background: var(--blue); }
+.temperature-card div, .service-badge div { display: flex; flex-direction: column; }.temperature-card small, .service-badge small { color: var(--muted); font-size: 9px; }.temperature-card strong, .service-badge strong { color: var(--navy); font-size: 13px; }
+.brand-strip { position: relative; display: grid; grid-template-columns: 1.4fr repeat(5, 1fr); align-items: center; margin-top: 55px; padding: 25px 0; border-top: 1px solid var(--line); color: #72889a; }
+.brand-strip span { font-size: 9px; font-weight: 800; letter-spacing: .16em; }.brand-strip strong { text-align: center; color: #7790a3; font-size: 16px; letter-spacing: -.04em; }
+.section { padding: 105px 0; }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: 60px; margin-bottom: 45px; }.section-head p { max-width: 450px; color: var(--muted); }.section h2 { margin: 8px 0 0; color: var(--navy); font-size: clamp(34px, 4vw, 49px); line-height: 1.12; letter-spacing: -.05em; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { position: relative; min-height: 342px; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: white; transition: transform .25s, box-shadow .25s, border .25s; overflow: hidden; }
+.service-card:hover { transform: translateY(-7px); border-color: #bddcf0; box-shadow: var(--shadow); }.service-card.featured { background: var(--navy); color: white; border-color: var(--navy); }.service-card.featured p { color: #b8cad9; }.service-card.featured h3, .service-card.featured a { color: white; }
+.service-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 38px; border-radius: 15px; color: var(--blue); background: var(--ice); }.featured .service-icon { color: white; background: rgba(92,215,245,.16); }.service-icon svg { width: 25px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.card-number { position: absolute; right: 27px; top: 27px; color: #b6c5d0; font-size: 12px; font-weight: 800; }.featured .card-number { color: #66839b; }.service-card h3 { margin-bottom: 12px; font-size: 21px; color: var(--navy); }.service-card p { color: var(--muted); font-size: 13px; }.service-card a { position: absolute; left: 30px; bottom: 27px; color: var(--blue); font-size: 12px; font-weight: 800; }
+.process { background: #f5faff; }.process-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: start; }.process-copy { position: sticky; top: 120px; }.process-copy > p { color: var(--muted); margin: 25px 0; }.promise { display: flex; gap: 12px; padding: 17px; border-radius: 15px; background: white; border: 1px solid var(--line); }.promise > span { display: grid; place-items: center; flex: 0 0 31px; height: 31px; color: white; border-radius: 50%; background: var(--blue); }.promise div { display: flex; flex-direction: column; }.promise strong { font-size: 13px; }.promise small { color: var(--muted); font-size: 11px; }
+.steps { border-left: 1px solid #b9d9ed; }.step { position: relative; display: grid; grid-template-columns: 54px 1fr; gap: 20px; padding: 0 0 38px 42px; }.step:last-child { padding-bottom: 0; }.step > span { display: grid; place-items: center; width: 54px; height: 54px; margin-left: -70px; color: var(--blue); border: 1px solid #b8d9ee; border-radius: 50%; background: #f5faff; font-size: 11px; font-weight: 800; }.step h3 { margin: 2px 0 5px; color: var(--navy); font-size: 18px; }.step p { color: var(--muted); font-size: 13px; }
+.stats-section { padding: 55px 0; color: white; background: var(--navy); }.stats { display: grid; grid-template-columns: repeat(4, 1fr); }.stats > div { display: flex; flex-direction: column; align-items: center; gap: 5px; border-right: 1px solid rgba(255,255,255,.15); }.stats > div:last-child { border: 0; }.stats strong { font-size: 30px; letter-spacing: -.04em; }.stats span { color: #a9c2d5; font-size: 11px; }.demo-note { margin: 18px 20px 0; text-align: center; color: #66839a; font-size: 9px; }
+.faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 90px; }.faq-intro p { margin: 23px 0 16px; color: var(--muted); }.text-link { color: var(--blue); font-size: 13px; font-weight: 800; }.faq-item { border-bottom: 1px solid var(--line); }.faq-item button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; color: var(--navy); background: transparent; border: 0; text-align: left; font-weight: 750; cursor: pointer; }.faq-item i { display: grid; place-items: center; flex: 0 0 28px; height: 28px; color: var(--blue); border-radius: 50%; background: var(--ice); font-style: normal; font-size: 18px; transition: transform .2s; }.faq-item.open i { transform: rotate(45deg); }.faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }.faq-answer p { padding: 0 45px 20px 0; color: var(--muted); font-size: 13px; }
+.quote-section { padding-top: 30px; }.quote-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; padding: 65px; border-radius: 30px; color: white; background: radial-gradient(circle at 15% 10%, #155083, transparent 43%), var(--navy); box-shadow: var(--shadow); }.section-kicker.light { color: var(--cyan); }.quote-copy h2 { color: white; }.quote-copy > p { margin: 24px 0; color: #b1c7d8; }.quote-copy ul { padding: 0; list-style: none; }.quote-copy li { display: flex; gap: 10px; align-items: center; margin: 12px 0; color: #d9e7f1; font-size: 13px; }.quote-copy li span { color: var(--cyan); }
+.quote-form { padding: 30px; border-radius: 21px; color: var(--ink); background: white; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }.quote-form label { display: block; margin-bottom: 14px; color: var(--navy); font-size: 11px; font-weight: 800; }.quote-form input, .quote-form select, .quote-form textarea { width: 100%; margin-top: 6px; padding: 12px 13px; border: 1px solid var(--line); border-radius: 10px; outline: none; color: var(--ink); background: #fbfdfe; font-size: 12px; transition: border .2s, box-shadow .2s; }.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(20,123,243,.1); }.quote-form textarea { resize: vertical; }.checkbox { display: flex !important; align-items: flex-start; gap: 9px; color: var(--muted) !important; font-weight: 500 !important; }.checkbox input { width: auto; margin: 3px 0 0; }.form-submit { width: 100%; }.form-status { min-height: 18px; margin: 10px 0 -5px; text-align: center; color: #16815e; font-size: 11px; }
+footer { margin-top: 105px; padding: 65px 0 25px; color: #9fb5c7; background: #061a2c; }.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 70px; }.footer-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }.footer-logo { color: white; }.footer-grid p { max-width: 350px; margin-top: 12px; font-size: 12px; }.footer-grid strong { margin-bottom: 8px; color: white; font-size: 12px; }.footer-grid a, .footer-grid span { font-size: 11px; }.footer-grid a:hover { color: var(--cyan); }.footer-bottom { display: flex; justify-content: space-between; margin-top: 50px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); font-size: 9px; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }.reveal.visible { opacity: 1; transform: translateY(0); }.delay-one { transition-delay: .12s; }.delay-two { transition-delay: .22s; }
+@media (max-width: 900px) {
+  .nav { position: absolute; left: 20px; right: 20px; top: 70px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }.nav.open { display: flex; }.nav a { padding: 12px; }.nav-cta { margin-top: 5px; text-align: center; }.menu-toggle { display: block; }
+  .hero { padding-top: 65px; }.hero-grid { grid-template-columns: 1fr; gap: 30px; }.hero-copy { text-align: center; }.eyebrow, .hero-actions, .hero-trust { justify-content: center; }.hero-lead { margin-inline: auto; }.hero-visual { height: 420px; max-width: 600px; width: 100%; margin-inline: auto; }.brand-strip { grid-template-columns: repeat(5, 1fr); }.brand-strip span { grid-column: 1/-1; margin-bottom: 15px; text-align: center; }
+  .service-grid { grid-template-columns: 1fr; }.service-card { min-height: 290px; }.process-grid, .faq-grid, .quote-wrap { grid-template-columns: 1fr; gap: 45px; }.process-copy { position: static; }.stats { grid-template-columns: 1fr 1fr; gap: 30px 0; }.stats > div:nth-child(2) { border: 0; }.quote-wrap { padding: 45px; }.footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 35px; }
+}
+@media (max-width: 600px) {
+  .container { width: min(100% - 28px, 1160px); }.concept-bar { font-size: 9px; }.nav-wrap { height: 68px; }.hero { padding-top: 45px; } h1 { font-size: 46px; }.hero-lead { font-size: 15px; }.hero-actions { flex-direction: column; align-items: stretch; }.hero-actions .button { width: 100%; }.hero-trust { gap: 14px; }.hero-visual { height: 335px; }.visual-card { inset: 5px 0; border-radius: 100px 100px 23px 23px; }.ac-unit { top: 80px; height: 105px; padding: 20px; }.ac-line { bottom: 23px; }.air { top: 102px; height: 52px; }.temperature-card { top: 20px; right: 13px; padding: 9px; }.service-badge { left: 13px; bottom: 20px; padding: 9px; }.brand-strip strong { font-size: 12px; }.section { padding: 75px 0; }.section-head { display: block; }.section-head p { margin-top: 20px; }.section h2 { font-size: 36px; }.process-grid { gap: 55px; }.steps { margin-left: 27px; }.step { padding-left: 33px; }.step > span { margin-left: -61px; }.stats { grid-template-columns: 1fr 1fr; }.stats strong { font-size: 25px; }.stats span { max-width: 115px; text-align: center; }.quote-wrap { width: calc(100% - 20px); padding: 35px 18px; border-radius: 22px; }.quote-form { padding: 20px 15px; }.form-row { grid-template-columns: 1fr; gap: 0; }.footer-grid { grid-template-columns: 1fr; }.footer-bottom { flex-direction: column; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+
+</style>
+</head>
+<body>
+  <div class="concept-bar">Portfólió-koncepció · A cég és az adatok fiktívek</div>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="#top" aria-label="FrissPont Klíma kezdőlap">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M4.93 6.1l14.14 11.8M4.93 17.9 19.07 6.1M2 12h20"/></svg>
+        </span>
+        <span>FrissPont<span class="logo-accent">Klíma</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Főmenü">
+        <a href="#szolgaltatasok">Szolgáltatások</a>
+        <a href="#folyamat">Hogyan működik?</a>
+        <a href="#gyik">GYIK</a>
+        <a class="nav-cta" href="#ajanlat">Ajánlatot kérek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> Budapest és Pest vármegye</div>
+          <h1>Hűvös otthon.<br><em>Tiszta megoldás.</em></h1>
+          <p class="hero-lead">Klímatelepítés, karbantartás és tisztítás korrekt tájékoztatással, igényes kivitelezéssel és rejtett költségek nélkül.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#ajanlat">Ingyenes ajánlatkérés <span>→</span></a>
+            <a class="button button-ghost" href="tel:+3615550100">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+              +36 1 555 0100
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div><strong>4,9</strong><span class="stars">★★★★★</span><small>példaértékelés</small></div>
+            <div class="trust-divider"></div>
+            <div><strong>48 órán belül</strong><small>visszajelzés a felmérésről</small></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-one" aria-label="Modern klímaberendezés illusztrációja">
+          <div class="visual-card">
+            <div class="ac-unit">
+              <div class="ac-brand">FRISSPONT</div>
+              <div class="ac-display"><span>22</span>°</div>
+              <div class="ac-line"></div>
+              <div class="air air-one"></div><div class="air air-two"></div><div class="air air-three"></div>
+            </div>
+            <div class="temperature-card"><span class="temp-icon">❄</span><div><small>Ideális hőmérséklet</small><strong>22 °C</strong></div></div>
+            <div class="service-badge"><span>✓</span><div><strong>Precíz telepítés</strong><small>Tiszta munkaterülettel</small></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="container brand-strip reveal">
+        <span>VÁLASZTHATÓ MÁRKÁK</span>
+        <strong>Daikin</strong><strong>Gree</strong><strong>Midea</strong><strong>Fisher</strong><strong>Samsung</strong>
+      </div>
+    </section>
+
+    <section class="section services" id="szolgaltatasok">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="section-kicker">AMIBEN SEGÍTÜNK</span><h2>Komfort egész évben</h2></div>
+          <p>Az első kérdéstől az átadásig érthetően, átláthatóan és az otthonodhoz igazítva dolgozunk.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card featured reveal">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="9" rx="2"/><path d="M7 18c1.5-2 2.5 2 4 0s2.5 2 4 0 2.5 2 4 0M7 10h10"/></svg></div>
+            <span class="card-number">01</span><h3>Klímatelepítés</h3><p>Teljes körű felmérés, készülékválasztás és szakszerű telepítés az otthonod adottságaihoz igazítva.</p><a href="#ajanlat">Ajánlatot kérek <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-one">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="card-number">02</span><h3>Tisztítás és karbantartás</h3><p>Higiénikusabb levegő, halkabb működés és hosszabb élettartam rendszeres, alapos karbantartással.</p><a href="#ajanlat">Időpontot kérek <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-two">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18v3h3l6.7-6.7a4 4 0 0 0 5-5l-2.5 2.5-3-3z"/></svg></div>
+            <span class="card-number">03</span><h3>Javítás és hibafeltárás</h3><p>Nem hűt, zajos vagy csepeg? Feltárjuk a problémát, és előre egyeztetett megoldást javaslunk.</p><a href="#ajanlat">Segítséget kérek <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="folyamat">
+      <div class="container process-grid">
+        <div class="process-copy reveal">
+          <span class="section-kicker">EGYSZERŰ FOLYAMAT</span><h2>Négy lépés a kellemesebb otthonért</h2><p>Nem kell szakértőnek lenned. Felmérjük az igényeidet, elmagyarázzuk a lehetőségeket, és végigkísérünk a teljes folyamaton.</p>
+          <div class="promise"><span>✓</span><div><strong>Átlátható ajánlat</strong><small>Minden várható költséget előre egyeztetünk.</small></div></div>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><span>01</span><div><h3>Kapcsolatfelvétel</h3><p>Írd meg röviden, milyen helyiségbe és mire keresel megoldást.</p></div></article>
+          <article class="step reveal"><span>02</span><div><h3>Helyszíni felmérés</h3><p>Megnézzük az adottságokat és közösen kiválasztjuk a megfelelő készüléket.</p></div></article>
+          <article class="step reveal"><span>03</span><div><h3>Tételes ajánlat</h3><p>Érthető ajánlatot kapsz a készülékről, munkadíjról és a várható időpontról.</p></div></article>
+          <article class="step reveal"><span>04</span><div><h3>Igényes kivitelezés</h3><p>Telepítünk, letakarítjuk a munkaterületet, majd megmutatjuk a használatot.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats-section">
+      <div class="container stats reveal">
+        <div><strong>8+</strong><span>év szakmai tapasztalat*</span></div>
+        <div><strong>600+</strong><span>telepített készülék*</span></div>
+        <div><strong>4,9/5</strong><span>ügyfélértékelés*</span></div>
+        <div><strong>2 év</strong><span>kivitelezési garancia*</span></div>
+      </div>
+      <p class="demo-note">* Fiktív mintaadatok a portfólió-koncepció bemutatásához.</p>
+    </section>
+
+    <section class="section faq" id="gyik">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal"><span class="section-kicker">GYAKORI KÉRDÉSEK</span><h2>Amit érdemes tudni</h2><p>Nem találtad meg a választ? Írj nekünk, és segítünk eligazodni.</p><a class="text-link" href="#ajanlat">Kérdezek a szakértőtől →</a></div>
+        <div class="accordion">
+          <article class="faq-item reveal"><button aria-expanded="false"><span>Mennyi ideig tart egy klíma telepítése?</span><i>+</i></button><div class="faq-answer"><p>Egy átlagos, alap telepítés jellemzően néhány órát vesz igénybe. A pontos idő a helyszíni adottságoktól függ.</p></div></article>
+          <article class="faq-item reveal"><button aria-expanded="false"><span>Milyen gyakran szükséges a tisztítás?</span><i>+</i></button><div class="faq-answer"><p>Általában évente legalább egyszer, intenzív vagy hűtő-fűtő használat mellett gyakrabban javasolt. A gyártói előírás az irányadó.</p></div></article>
+          <article class="faq-item reveal"><button aria-expanded="false"><span>Mekkora teljesítményű készülékre van szükségem?</span><i>+</i></button><div class="faq-answer"><p>Nem csak az alapterület számít. A tájolás, szigetelés, ablakfelület és használat is befolyásolja, ezért érdemes felmérést kérni.</p></div></article>
+          <article class="faq-item reveal"><button aria-expanded="false"><span>Lehet klímával gazdaságosan fűteni?</span><i>+</i></button><div class="faq-answer"><p>Megfelelő készülékkel és jó épületadottságok mellett igen. A várható fogyasztást mindig az adott ingatlan alapján érdemes megbecsülni.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="ajanlat">
+      <div class="container quote-wrap">
+        <div class="quote-copy reveal"><span class="section-kicker light">KÉRJ AJÁNLATOT</span><h2>Legyen kellemesebb az otthonod</h2><p>Töltsd ki az űrlapot, és a minta szerint egy munkatárs rövid időn belül felvenné veled a kapcsolatot.</p><ul><li><span>✓</span> Díjmentes kapcsolatfelvétel</li><li><span>✓</span> Személyre szabott javaslat</li><li><span>✓</span> Kötelezettségek nélkül</li></ul></div>
+        <form class="quote-form reveal delay-one" id="quoteForm">
+          <div class="form-row"><label>Teljes név<input type="text" name="name" placeholder="Példa Péter" required></label><label>Telefonszám<input type="tel" name="phone" placeholder="+36 30 123 4567" required></label></div>
+          <label>E-mail-cím<input type="email" name="email" placeholder="pelda@email.hu" required></label>
+          <label>Miben segíthetünk?<select name="service" required><option value="">Válassz szolgáltatást</option><option>Klímatelepítés</option><option>Tisztítás és karbantartás</option><option>Javítás és hibafeltárás</option><option>Egyéb kérdés</option></select></label>
+          <label>Rövid üzenet<textarea name="message" rows="4" placeholder="Település, helyiség mérete és minden fontos részlet..."></textarea></label>
+          <label class="checkbox"><input type="checkbox" required><span>Elfogadom a minta adatkezelési tájékoztatót.</span></label>
+          <button class="button button-primary form-submit" type="submit">Ajánlatkérés elküldése <span>→</span></button>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="logo footer-logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2v20M4.93 6.1l14.14 11.8M4.93 17.9 19.07 6.1M2 12h20"/></svg></span><span>FrissPont<span class="logo-accent">Klíma</span></span></a><p>Modern klímatechnikai megoldások otthonoknak és kisebb vállalkozásoknak.</p></div>
+      <div><strong>Oldalak</strong><a href="#szolgaltatasok">Szolgáltatások</a><a href="#folyamat">Folyamat</a><a href="#gyik">GYIK</a></div>
+      <div><strong>Elérhetőség</strong><a href="tel:+3615550100">+36 1 555 0100</a><a href="mailto:hello@frisspont-minta.hu">hello@frisspont-minta.hu</a><span>Budapest és Pest vármegye</span></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 FrissPont Klíma — Portfólió-koncepció</span><span>Adatkezelés · Impresszum</span></div>
+  </footer>
+  <script>
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector(".nav");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = navigation.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll(".nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.querySelectorAll(".faq-item button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".faq-item");
+    const answer = item.querySelector(".faq-answer");
+    const isOpen = item.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(isOpen));
+    answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : "0px";
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+const form = document.querySelector("#quoteForm");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const status = form.querySelector(".form-status");
+  status.textContent = "Ez egy bemutató űrlap — az adatok nem kerültek elküldésre.";
+  form.reset();
+});
+
+</script>
+</body>
+</html>
