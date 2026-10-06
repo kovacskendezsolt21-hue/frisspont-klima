@@ -97,7 +97,9 @@ h1 em { font-style: normal; color: var(--blue); }
 .stats-section { padding: 55px 0; color: white; background: var(--navy); }.stats { display: grid; grid-template-columns: repeat(4, 1fr); }.stats > div { display: flex; flex-direction: column; align-items: center; gap: 5px; border-right: 1px solid rgba(255,255,255,.15); }.stats > div:last-child { border: 0; }.stats strong { font-size: 30px; letter-spacing: -.04em; }.stats span { color: #a7cbbb; font-size: 11px; }.demo-note { margin: 18px 20px 0; text-align: center; color: #648b78; font-size: 9px; }
 .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 90px; }.faq-intro p { margin: 23px 0 16px; color: var(--muted); }.text-link { color: var(--blue); font-size: 13px; font-weight: 800; }.faq-item { border-bottom: 1px solid var(--line); }.faq-item button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; color: var(--navy); background: transparent; border: 0; text-align: left; font-weight: 750; cursor: pointer; }.faq-item i { display: grid; place-items: center; flex: 0 0 28px; height: 28px; color: var(--blue); border-radius: 50%; background: var(--ice); font-style: normal; font-size: 18px; transition: transform .2s; }.faq-item.open i { transform: rotate(45deg); }.faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }.faq-answer p { padding: 0 45px 20px 0; color: var(--muted); font-size: 13px; }
 .quote-section { padding-top: 30px; }.quote-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; padding: 65px; border-radius: 30px; color: white; background: radial-gradient(circle at 15% 10%, #176044, transparent 43%), var(--navy); box-shadow: var(--shadow); }.section-kicker.light { color: var(--cyan); }.quote-copy h2 { color: white; }.quote-copy > p { margin: 24px 0; color: #b0cfc2; }.quote-copy ul { padding: 0; list-style: none; }.quote-copy li { display: flex; gap: 10px; align-items: center; margin: 12px 0; color: #d9ece3; font-size: 13px; }.quote-copy li span { color: var(--cyan); }
-.quote-form { padding: 30px; border-radius: 21px; color: var(--ink); background: white; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }.quote-form label { display: block; margin-bottom: 14px; color: var(--navy); font-size: 11px; font-weight: 800; }.quote-form input, .quote-form select, .quote-form textarea { width: 100%; margin-top: 6px; padding: 12px 13px; border: 1px solid var(--line); border-radius: 10px; outline: none; color: var(--ink); background: #fbfefc; font-size: 12px; transition: border .2s, box-shadow .2s; }.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,166,111,.1); }.quote-form textarea { resize: vertical; }.checkbox { display: flex !important; align-items: flex-start; gap: 9px; color: var(--muted) !important; font-weight: 500 !important; }.checkbox input { width: auto; margin: 3px 0 0; }.form-submit { width: 100%; }.form-status { min-height: 18px; margin: 10px 0 -5px; text-align: center; color: #16815e; font-size: 11px; }
+.quote-form { padding: 30px; border-radius: 21px; color: var(--ink); background: white; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }.quote-form label { display: block; margin-bottom: 14px; color: var(--navy); font-size: 11px; font-weight: 800; }.quote-form input, .quote-form select, .quote-form textarea { width: 100%; margin-top: 6px; padding: 12px 13px; border: 1px solid var(--line); border-radius: 10px; outline: none; color: var(--ink); background: #fbfefc; font-size: 12px; transition: border .2s, box-shadow .2s; }.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,166,111,.1); }.quote-form textarea { resize: vertical; }.checkbox { display: flex !important; align-items: flex-start; gap: 9px; color: var(--muted) !important; font-weight: 500 !important; }.checkbox input { width: auto; margin: 3px 0 0; }.form-submit { width: 100%; }.honeypot { position: absolute !important; left: -9999px !important; opacity: 0 !important; pointer-events: none !important; }
+.form-submit:disabled { cursor: wait; opacity: .7; transform: none; }
+.form-status { min-height: 18px; margin: 10px 0 -5px; text-align: center; color: #16815e; font-size: 11px; }
 footer { margin-top: 105px; padding: 65px 0 25px; color: #9dbdaf; background: #071f18; }.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 70px; }.footer-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }.footer-logo { color: white; }.footer-grid p { max-width: 350px; margin-top: 12px; font-size: 12px; }.footer-grid strong { margin-bottom: 8px; color: white; font-size: 12px; }.footer-grid a, .footer-grid span { font-size: 11px; }.footer-grid a:hover { color: var(--cyan); }.footer-bottom { display: flex; justify-content: space-between; margin-top: 50px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); font-size: 9px; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }.reveal.visible { opacity: 1; transform: translateY(0); }.delay-one { transition-delay: .12s; }.delay-two { transition-delay: .22s; }
 @media (max-width: 900px) {
@@ -238,8 +240,10 @@ footer { margin-top: 105px; padding: 65px 0 25px; color: #9dbdaf; background: #0
 
     <section class="section quote-section" id="ajanlat">
       <div class="container quote-wrap">
-        <div class="quote-copy reveal"><span class="section-kicker light">KÉRJ AJÁNLATOT</span><h2>Legyen kellemesebb az otthonod</h2><p>Töltsd ki az űrlapot, és a minta szerint egy munkatárs rövid időn belül felvenné veled a kapcsolatot.</p><ul><li><span>✓</span> Díjmentes kapcsolatfelvétel</li><li><span>✓</span> Személyre szabott javaslat</li><li><span>✓</span> Kötelezettségek nélkül</li></ul></div>
-        <form class="quote-form reveal delay-one" id="quoteForm">
+        <div class="quote-copy reveal"><span class="section-kicker light">KÉRJ AJÁNLATOT</span><h2>Legyen kellemesebb az otthonod</h2><p>Töltsd ki az űrlapot, és rövid időn belül felvesszük veled a kapcsolatot.</p><ul><li><span>✓</span> Díjmentes kapcsolatfelvétel</li><li><span>✓</span> Személyre szabott javaslat</li><li><span>✓</span> Kötelezettségek nélkül</li></ul></div>
+        <form class="quote-form reveal delay-one" id="quoteForm" action="https://formspree.io/f/xgaovzba" method="POST">
+          <input type="hidden" name="_subject" value="Új FrissPont Klíma ajánlatkérés">
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row"><label>Teljes név<input type="text" name="name" placeholder="Példa Péter" required></label><label>Telefonszám<input type="tel" name="phone" placeholder="+36 30 123 4567" required></label></div>
           <label>E-mail-cím<input type="email" name="email" placeholder="pelda@email.hu" required></label>
           <label>Miben segíthetünk?<select name="service" required><option value="">Válassz szolgáltatást</option><option>Klímatelepítés</option><option>Tisztítás és karbantartás</option><option>Javítás és hibafeltárás</option><option>Egyéb kérdés</option></select></label>
@@ -298,11 +302,40 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
 const form = document.querySelector("#quoteForm");
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const status = form.querySelector(".form-status");
-  status.textContent = "Ez egy bemutató űrlap — az adatok nem kerültek elküldésre.";
-  form.reset();
+  const submitButton = form.querySelector("button[type=\"submit\"]");
+  const originalButtonContent = submitButton.innerHTML;
+
+  status.textContent = "";
+  status.style.color = "#16815e";
+  submitButton.disabled = true;
+  submitButton.textContent = "Küldés folyamatban...";
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      status.textContent = "Köszönjük! Az ajánlatkérés sikeresen elküldve.";
+      form.reset();
+    } else {
+      const data = await response.json().catch(() => ({}));
+      const message = data.errors?.map((error) => error.message).join(", ");
+      status.style.color = "#b42318";
+      status.textContent = message || "A küldés nem sikerült. Kérjük, próbáld újra.";
+    }
+  } catch (error) {
+    status.style.color = "#b42318";
+    status.textContent = "Hálózati hiba történt. Ellenőrizd a kapcsolatot, majd próbáld újra.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalButtonContent;
+  }
 });
 
 </script>
