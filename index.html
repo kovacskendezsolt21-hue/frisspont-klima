@@ -244,13 +244,13 @@ footer { margin-top: 105px; padding: 65px 0 25px; color: #9dbdaf; background: #0
         <form class="quote-form reveal delay-one" id="quoteForm" action="https://formspree.io/f/xgaovzba" method="POST">
           <input type="hidden" name="_subject" value="Új FrissPont Klíma ajánlatkérés">
           <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="form-row"><label>Teljes név<input type="text" name="name" placeholder="Példa Péter" required></label><label>Telefonszám<input type="tel" name="phone" placeholder="+36 30 123 4567" required></label></div>
-          <label>E-mail-cím<input type="email" name="email" placeholder="pelda@email.hu" required></label>
+          <div class="form-row"><label>Teljes név<input type="text" name="name" placeholder="Példa Péter" autocomplete="name" required></label><label>Telefonszám<input type="tel" name="phone" placeholder="+36 30 123 4567" autocomplete="tel" required></label></div>
+          <label>E-mail-cím<input type="email" name="email" placeholder="pelda@email.hu" autocomplete="email" required></label>
           <label>Miben segíthetünk?<select name="service" required><option value="">Válassz szolgáltatást</option><option>Klímatelepítés</option><option>Tisztítás és karbantartás</option><option>Javítás és hibafeltárás</option><option>Egyéb kérdés</option></select></label>
-          <label>Rövid üzenet<textarea name="message" rows="4" placeholder="Település, helyiség mérete és minden fontos részlet..."></textarea></label>
-          <label class="checkbox"><input type="checkbox" required><span>Elfogadom a minta adatkezelési tájékoztatót.</span></label>
+          <label>Rövid üzenet<textarea name="message" rows="4" placeholder="Település, helyiség mérete és minden fontos részlet..." required></textarea></label>
+          <label class="checkbox"><input type="checkbox" name="privacy_consent" value="accepted" required><span>Elfogadom a minta adatkezelési tájékoztatót.</span></label>
           <button class="button button-primary form-submit" type="submit">Ajánlatkérés elküldése <span>→</span></button>
-          <p class="form-status" role="status"></p>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -311,6 +311,7 @@ form.addEventListener("submit", async (event) => {
   status.textContent = "";
   status.style.color = "#16815e";
   submitButton.disabled = true;
+  form.setAttribute("aria-busy", "true");
   submitButton.textContent = "Küldés folyamatban...";
 
   try {
@@ -334,6 +335,7 @@ form.addEventListener("submit", async (event) => {
     status.textContent = "Hálózati hiba történt. Ellenőrizd a kapcsolatot, majd próbáld újra.";
   } finally {
     submitButton.disabled = false;
+    form.removeAttribute("aria-busy");
     submitButton.innerHTML = originalButtonContent;
   }
 });
